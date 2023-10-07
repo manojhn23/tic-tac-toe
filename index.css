@@ -1,6 +1,10 @@
 body {
-  background-color: black;
+  /* background-color: black; */
+  background: linear-gradient(-45deg,rgb(255, 255, 255),rgb(122, 167, 255),rgb(0, 76, 255));
+  background-size: 400% 400%;
   color: white;
+  animation: colorchange 15s ease infinite;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container {
   display: grid;
@@ -11,20 +15,21 @@ body {
   margin-top: 3%;
   margin-left: 20%;
   box-shadow: 0px 0px 100px white;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.416);
 }
 .col {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100px;
-  background-color: rgb(161, 161, 161);
+  background-color: rgba(255, 255, 255, 0.288);
   font-size: 50px;
   font-weight: bolder;
-  box-shadow: 0px 0px 20px black;
+  box-shadow: 0px 0px 15px black;
   cursor: pointer;
 }
 .name {
+  font-size: 250%;
   text-align: center;
   margin-top: 5%;
 }
@@ -35,19 +40,38 @@ button {
   border-radius: 20px;
   border-style: none;
   font-size: 20px;
-  background-color: red;
-  box-shadow: 0px 0px 50px rgb(255, 0, 0);
+  background-color: rgb(0, 8, 255);
+  box-shadow: 0px 0px 10px rgb(255, 0, 0);
   cursor: pointer;
 }
 button:active {
   background-color: green;
 }
 #player {
+  font-size: 250%;
   text-align: center;
   margin-top: 3%;
+  font-weight: 500;
 }
 @media (min-width: 0px) and (max-width: 500px) {
   .name {
     margin-top: 35%;
+  }
+  button{
+    width: max-content;
+  }
+}
+@keyframes colorchange {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 1px 1px 20px rgb(25, 0, 255);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 1px 1px 20px black;
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 1px 1px 20px rgb(255, 0, 0);
   }
 }
